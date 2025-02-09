@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".gameActivity"
+    android:background="#2C3E50">
+
+    <!-- Title: Number Range -->
+    <TextView
+        android:id="@+id/tvRange"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginEnd="24dp"
+        android:text="Select Number Range:"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Radio Buttons for Number Range Selection -->
+    <RadioGroup
+
+        android:id="@+id/radioGroupRange"
+
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvRange"
+        app:layout_constraintVertical_bias="0.1">
+
+        <RadioButton
+            android:id="@+id/rbRange10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#ECF0F1"
+            android:text="1-10"
+            android:textSize="25sp"
+            android:layout_marginEnd="16dp"
+            android:buttonTint="#00bcd4" />
+
+        <RadioButton
+            android:id="@+id/rbRange100"
+            android:textColor="#ECF0F1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-100"
+            android:textSize="25sp"
+            android:buttonTint="#00bcd4" />
+
+        <RadioButton
+            android:id="@+id/rbRange1000"
+            android:textColor="#ECF0F1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-1000"
+            android:textSize="25sp"
+            android:buttonTint="#00bcd4" />
+    </RadioGroup>
+
+    <!-- Title: Your Number -->
+
+    <!-- EditText for User Input -->
+
+    <!-- Result TextView -->
+
+    <!-- Button: OK -->
+
+    <!-- Button: Send Number -->
+
+    <TextView
+        android:id="@+id/tvYourNumber"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:text="Your Number:"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.336" />
+
+    <EditText
+        android:id="@+id/yourNumber"
+        android:layout_width="402dp"
+        android:layout_height="57dp"
+        android:layout_marginEnd="24dp"
+        android:hint="Enter your number"
+        android:textColorHint="#3498DB"
+        android:textColor="#ECF0F1"
+        android:textSize="25sp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.386" />
+
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:text="Result will appear here"
+        android:textColor="#2ECC71"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/yourNumber"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/okbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00bcd4"
+        android:text="OK"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.217"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.623" />
+
+
+    <Button
+        android:id="@+id/restartbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00bcd4"
+        android:text="restart"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.614" />
+    <Button
+        android:id="@+id/numbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00bcd4"
+        android:text="Send"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.246" />
+
+    <Button
+        android:id="@+id/tomainbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#00bcd4"
+        android:text="to main"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.798" />
+</androidx.constraintlayout.widget.ConstraintLayout>
