@@ -12,10 +12,11 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
 
 public class MainActivity extends AppCompatActivity {
     Button b1, b2, b3, gamebtn, takanon;
@@ -24,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
     SeekBar sb1;
     Switch sw;
     final int START_GAME = 1950;
-
     ImageView iv;
     ImageView iv1;
 
@@ -51,11 +51,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-
         if (resultCode == RESULT_OK && data != null) {
             boolean isChecked = data.getBooleanExtra("checkbox_checked", false);
             if (isChecked) {
-
                 gamebtn.setVisibility(View.VISIBLE);
             }
         }
@@ -64,29 +62,15 @@ public class MainActivity extends AppCompatActivity {
     private void initViews() {
         b1 = findViewById(R.id.btn1);
         b2 = findViewById(R.id.btn2);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, "b1", Toast.LENGTH_SHORT).show();
-            }
-        });
-        b2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Toast.makeText(context, "b2", Toast.LENGTH_SHORT).show();
-            }
-        });
+        b1.setOnClickListener(view -> Toast.makeText(context, "b1", Toast.LENGTH_SHORT).show());
+        b2.setOnClickListener(view -> Toast.makeText(context, "b2", Toast.LENGTH_SHORT).show());
 
         sb1 = findViewById(R.id.sb1);
         sb1.setProgress(100);
         sb1.setMax(100);
 
         sw = findViewById(R.id.sw);
-        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            }
-        });
+        sw.setOnCheckedChangeListener((compoundButton, b) -> {});
 
         iv = findViewById(R.id.iv);
         iv1 = findViewById(R.id.iv1);
@@ -101,45 +85,50 @@ public class MainActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onStartTrackingTouch(SeekBar seekBar) {
-            }
+            public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {
-            }
+            public void onStopTrackingTouch(SeekBar seekBar) {}
         });
 
         b3 = findViewById(R.id.btn3);
-        b3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, LinearActivty.class);
-                startActivity(intent);
-            }
+        b3.setOnClickListener(view -> {
+            Intent intent = new Intent(context, LinearActivty.class);
+            startActivity(intent);
         });
 
         gamebtn = findViewById(R.id.gamebtn);
         gamebtn.setVisibility(View.GONE);
-        gamebtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(context, gameActivity.class);
-                startActivityForResult(intent, START_GAME);
-            }
+        gamebtn.setOnClickListener(view -> {
+            Intent intent = new Intent(context, gameActivity.class);
+            startActivityForResult(intent, START_GAME);
         });
 
         takanon = findViewById(R.id.takanon);
-        takanon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(context, takanonActivity.class);
-                startActivityForResult(intent, 1);
-            }
+        takanon.setOnClickListener(view -> {
+            Intent intent = new Intent(context, takanonActivity.class);
+            startActivityForResult(intent, 1);
         });
     }
-}
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_login) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+}
 
 
 
